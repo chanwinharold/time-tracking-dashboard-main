@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* { margin: 0; }
+
+// Variables
+$bodyBgColor: hsl(226, 43%, 10%);
+$containersBgColor: hsl(235, 46%, 20%);
+$containersHoverBgColor: hsl(235, 45%, 61%);
+$identityBgColor: hsl(246, 80%, 60%);
+$txColor: hsl(236, 100%, 87%);
+
+// Mixin
+@mixin flexbox($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body {
+    min-height: 100vh;
+    @include flexbox(column, center, center);
+    font-family: Rubik, sans-serif;
+    font-size: 1.1em;
+    background-color: $bodyBgColor;
+
+}
+
+.dashboard {
+    width: 70%;
+    @include flexbox(row, center, center);
+    gap: 20px;
+    margin: 3rem;
+
+    @media screen and (max-width: 1074px) and (min-width: 800px) {
+        width: 95vw;
+    }
+    @media screen and (max-width: 800px) {
+        width: 300px;
+        @include flexbox(column, center, center);
+    }
+
+    &__identity {
+        width: 25%;
+        min-width: 175px;
+        height: 400px;
+        @include flexbox(column, flex-start, flex-start);
+        gap: 20px;
+        border-radius: 10px;
+        background-color: $containersBgColor;
+
+        @media screen and (max-width: 800px) {
+            width: 300px;
+            height: auto
+        }
+
+        &__header {
+            @include flexbox(column, flex-start, flex-start);
+            width: 100%;
+            gap: 20px;
+            color: white;
+            padding: 2rem;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background-color: $identityBgColor;
+
+            @media screen and (max-width: 800px) {
+                height: auto;
+                @include flexbox(row, flex-start, flex-start);
+            }
+
+            &__image {
+                width: 75px;
+                border: 2px solid white;
+                border-radius: 50%;
+            }
+            > div {
+                @include flexbox(column, flex-start, flex-start);
+                gap: 15px;
+            }
+            &__content {
+                font-size: 0.8em;
+                color: $txColor;
+            }
+            &__title {
+                font-weight: 400;
+            }
+        }
+        &__link {
+            font-size: 0.8em;
+            color: $txColor;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+
+.card {
+    width: 75%;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 190px 190px;
+    gap: 20px;
+
+    @media screen and (max-width: 800px) {
+        width: 300px;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    article {
+        color: white;
+        border-radius: 12px;
+        background-repeat: no-repeat;
+        background-position: top right 10px;
+        background-size: 60px;
+
+        @media screen and (max-width: 800px) {
+            width: 300px;
+            height: 200px;
+        }
+
+        > p { height: 20%; }
+        div {
+            @include flexbox(column, center, flex-start);
+            gap: 5px;
+            height: 80%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            border-radius: 10px;
+            background-color: $containersBgColor;
+            &:hover {
+                background-color: $containersHoverBgColor;
+            }
+
+            h2 {
+                font-size: 3em;
+                font-weight: 200;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            p:first-child {
+                width: 100%;
+                @include flexbox(row, space-between, center);
+            }
+            > p {
+                font-size: 0.7em;
+                color: $txColor;
+            }
+        }
+    }
+}
+
+.white { color: white; }
+ul {
+    list-style: none;
+    line-height: 2em;
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        @include flexbox(row, space-around, center);
+        box-sizing: border-box;
+        padding: 0 0 10px 0;
+    }
+}
+.attribution { font-size: 11px; text-align: center; a { color: hsl(228, 45%, 44%); }
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+}
