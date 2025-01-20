@@ -24,8 +24,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here](https://your-solution-url.com)
-- Live Site URL: [live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL here](https://github.com/chanwinharold/time-tracking-dashboard-main)
+- Live Site URL: [live site URL here](https://time-tracking-dashboard-main-phi-ruddy.vercel.app/)
 
 ### Built with
 
