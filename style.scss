@@ -23,7 +23,6 @@ body {
     font-family: Rubik, sans-serif;
     font-size: 1.1em;
     background-color: $bodyBgColor;
-
 }
 
 .dashboard {
@@ -137,11 +136,11 @@ body {
                 background-color: $containersHoverBgColor;
             }
 
-            h2 {
+            h1 {
                 font-size: 3em;
                 font-weight: 200;
             }
-            h3 {
+            h2 {
                 font-size: 1.2em;
             }
             p:first-child {
@@ -157,6 +156,7 @@ body {
 }
 
 .white { color: white; }
+button { border: none; background-color: inherit; }
 ul {
     list-style: none;
     line-height: 2em;

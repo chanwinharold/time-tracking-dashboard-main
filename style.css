@@ -150,11 +150,11 @@ body {
 .card article div:hover {
   background-color: hsl(235, 45%, 61%);
 }
-.card article div h2 {
+.card article div h1 {
   font-size: 3em;
   font-weight: 200;
 }
-.card article div h3 {
+.card article div h2 {
   font-size: 1.2em;
 }
 .card article div p:first-child {
@@ -171,6 +171,11 @@ body {
 
 .white {
   color: white;
+}
+
+button {
+  border: none;
+  background-color: inherit;
 }
 
 ul {
